@@ -1,0 +1,34 @@
+def sorting(arr):
+    arr.sort(key=lambda i: i[2], reverse=True)
+    # print("Sorted list :-\n", arr)
+    m_d = arr[0][2]
+    j_exe = []
+    for i in range(m_d):
+        max_item = arr[0]
+        for item in arr:
+            if item[2] == i + 1> max_item[1]:
+                max_item = item 
+        j_exe.append((max_item[0],max_item[1]))
+        return j_exe
+
+
+n = int(input("Enter the size of list --> "))
+l1 = []*n
+l2 = []*n
+l3 = []*n
+
+for i in range(1, n+1):
+    a = input(f"Enter the job {i} --> ")
+    b = int(input(f"Enter the Profit {i} --> "))
+    c = int(input(f"Enter the Deadline {i} --> "))
+    l1.append(a)
+    l2.append(b)
+    l3.append(c)
+
+s_a = [(l1[i], l2[i], l3[i]) for i in range(n)]
+print("The list of tuple :-\n", s_a)
+
+# sorting(s_a)
+print (sorting(s_a))
+# print (l2)
+# print (l3)
